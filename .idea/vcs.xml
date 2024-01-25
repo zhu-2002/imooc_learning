@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/R-Driver" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/agent" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ajax" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/filter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/junit4" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mall" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/myBatis" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/oa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/reader" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/redis" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/restful" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/restful_8080" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/s07" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/s08" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/s09" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/servelet-first" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/spring" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/spring-cloud-course-practice" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/spring01" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/springboot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/springjdbc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/springmvc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/web-servlet" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--    当前POM.xml的版本-->
+    <modelVersion>4.0.0</modelVersion>
+
+<!--    当前maven工程的坐标系，在本地仓库发布的时候用于存储和定位-->
+    <groupId>org.example</groupId>
+    <artifactId>hello</artifactId>
+    <version>1.0.0-RELEASE</version>
+<!--    属性-->
+    <properties>
+<!--        编码格式-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<!--        源代码进行语法检查的时按照JDK1.8的版本进行编译检查-->
+        <maven.compiler.source>8</maven.compiler.source>
+<!--        编译生成字节码的时候采用1.8编译级别进行编译-->
+        <maven.compiler.taarget>8</maven.compiler.taarget>
+<!--        依赖版本-->
+    <pinyin4j.version>2.5.1</pinyin4j.version>
+    </properties>
+
+<!--    阿里依赖仓库-->
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>
+<!--    阿里插件仓库-->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+<!--    依赖-->
+    <dependencies>
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+<!--            <version>2.5.1</version>-->
+            <version>${pinyin4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+    </dependencies>
+<!--    与插件相关的设置选项-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.5.5</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>jdbc.JDBCSample</mainClass>
+                        </manifest>
+                    </archive>
+<!--                    打包时将所有jar包合并到输出文件的jar文件中-->
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

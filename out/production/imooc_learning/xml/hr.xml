@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hr SYSTEM "hr.dtd">
+<!--公司员工数据-->
+<hr>
+    <employee eno="2025020125">
+        <name>Zenos</name>
+        <age>20</age>
+        <salary>4000</salary>
+        <department>
+            <dname>研发部</dname>
+            <address>xx大厦-204</address>
+        </department>
+    </employee>
+    <employee eno="2025020105">
+        <name>Maria</name>
+        <age>18</age>
+        <salary>2000</salary>
+        <department>
+            <dname>会计部</dname>
+            <address>xx大厦-105</address>
+        </department>
+    </employee>
+</hr>

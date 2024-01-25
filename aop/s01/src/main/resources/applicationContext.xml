@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+<!--    初始化Ioc容器，扫描对应包下面的组件类-->
+    <context:component-scan base-package="com.imooc"/>
+<!--    启用Spring AOP注解模式-->
+    <aop:aspectj-autoproxy/>
+    <bean id="userDao" class="com.imooc.spring.aop.dao.UserDao"/>
+    <bean id="employeeDao" class="com.imooc.spring.aop.dao.EmployeeDao"/>
+    <bean id="userService" class="com.imooc.spring.aop.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+    <bean id="employeeService" class="com.imooc.spring.aop.service.EmployeeService">
+        <property name="employeeDao" ref="employeeDao"/>
+    </bean>
+<!--&lt;!&ndash;    AOP配置&ndash;&gt;-->
+<!--    <bean id="methodAspect" class="com.imooc.spring.aop.aspect.MethodAspect"/>-->
+<!--    <aop:config>-->
+<!--&lt;!&ndash;        切点，使用execution表达式描述切面的作用范围&ndash;&gt;-->
+<!--        <aop:pointcut id="pointcut" expression="execution(public * com.imooc..*.*(..))"/>-->
+<!--&lt;!&ndash;        定义切面类&ndash;&gt;-->
+<!--        <aop:aspect ref="methodAspect">-->
+<!--&lt;!&ndash;            目标方法运行前先执行methodAspect.printExcutionTime()&ndash;&gt;-->
+<!--            <aop:before method="printExcutionTime" pointcut-ref="pointcut"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+    <bean id="methodCheck" class="com.imooc.spring.aop.aspect.MethodCheck"/>
+    <aop:config>
+        <aop:pointcut id="pointcut" expression="execution(public * com.imooc..*.*(..))"/>
+        <aop:aspect ref="methodCheck">
+            <aop:around method="cheeck" pointcut-ref="pointcut"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
+
+
+

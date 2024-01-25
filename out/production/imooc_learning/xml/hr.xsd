@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--        当前文档引用的别名,当作全局默认的文档约束生效-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://ww.imooc.com/xml-schema" elementFormDefault="qualified">
+    <element name="hr">
+<!--        当前标签下是父子混合标签,用complexType-->
+        <complexType>
+            <sequence>
+                <element name="employee" minOccurs="1" maxOccurs="99999">
+                    <complexType>
+                        <sequence>
+                            <element name="name" type="string"></element>
+                            <element name="age" >
+                                <simpleType>
+<!--                                    声明类型-->
+                                    <restriction base="integer">
+<!--                                        Inclusive是闭区间，包含该点-->
+                                        <minInclusive value="21"></minInclusive>
+                                        <maxInclusive value="35"></maxInclusive>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="salary" type="integer"></element>
+                            <element name="department">
+                                <complexType>
+                                    <sequence>
+                                        <element name="dname" type="string"></element>
+                                        <element name="address" type="string"></element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                        <attribute name="eno" type="string" use="required"></attribute>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

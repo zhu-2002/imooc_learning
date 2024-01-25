@@ -1,0 +1,14 @@
+i18n\I18NFactory.class
+i18n\Language.class
+computershop\Customer.class
+computershop\Desktop.class
+i18n\Chinese.class
+computershop\Sever.class
+computershop\Other.class
+computershop\Computer.class
+computershop\shopAssitant.class
+i18n\English.class
+org\example\Main.class
+i18n\Spainish.class
+computershop\Notebook.class
+i18n\App.class

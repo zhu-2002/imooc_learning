@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--规定hr仅有employee这个节点，且数量至少一个-->
+<!ELEMENT hr (employee+)>
+<!ELEMENT employee (name,age,salary,department)>
+<!--规定姓名等属性只能是字符串-->
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT salary (#PCDATA)>
+<!ELEMENT department (dname,address)>
+<!ELEMENT dname (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!--约束属性，纯文本，“”是默认值-->
+<!ATTLIST employee eno CDATA "">
